@@ -11,7 +11,7 @@ const Login = ({ onLogin }) => {
     setError('')
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', formData)
+      const response = await axios.post('https://skillswap-52nn.onrender.com/api/auth/login', formData)
       onLogin(response.data.token)
     } catch (err) {
       setError(err.response?.data?.error || 'Login failed')
@@ -54,6 +54,17 @@ const Login = ({ onLogin }) => {
 
           <div className="text-center text-sm">
             <Link to="/signup" className="text-gray-600">Create account</Link>
+          </div>
+
+          <div className="text-center mt-4">
+            <a 
+              href="https://skillswap-52nn.onrender.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-xs text-gray-400 hover:text-gray-600"
+            >
+              Wake up server
+            </a>
           </div>
         </form>
       </div>

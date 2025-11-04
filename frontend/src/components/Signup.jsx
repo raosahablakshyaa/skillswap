@@ -20,7 +20,7 @@ const Signup = ({ onLogin }) => {
     setError('')
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/signup', formData)
+      const response = await axios.post('https://skillswap-52nn.onrender.com/api/auth/signup', formData)
       onLogin(response.data.token)
     } catch (err) {
       setError(err.response?.data?.error || 'Signup failed')

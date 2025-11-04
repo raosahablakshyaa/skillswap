@@ -10,6 +10,10 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'SkillSwap API is running' });
+});
+
 app.use('/api/auth', authRoutes);
 
 export default app;
